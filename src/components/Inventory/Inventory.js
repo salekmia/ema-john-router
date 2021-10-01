@@ -3,7 +3,7 @@ import React from 'react';
 const Inventory = () => {
     return (
         <div>
-            <h1>This is our inventory file</h1>
+            <h1>This is our inventory file ro page.</h1>
         </div>
     );
 };
