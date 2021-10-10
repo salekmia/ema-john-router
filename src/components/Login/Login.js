@@ -1,7 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Login.css';
 const Login = () => {
+    const {signInUsingGoogle} = useAuth()
+    const location = useLocation()
+    console.log('came from', location.state?.from)
     return (
         <div className="login-container">
             <div>
@@ -14,8 +18,8 @@ const Login = () => {
                     <input type="submit" value="Submit" />
                 </form>
                 <p>New to ema-john? <Link to="/register">create account</Link></p>
-                <div>--------------------- or ----------------------</div>
-                <button className="btn-regular">Goolge sign in</button>
+                <div> --------------------- or ----------------------</div>
+                <button onClick={signInUsingGoogle} className="btn-regular">Goolge sign in</button>
             </div>
         </div>
     );
